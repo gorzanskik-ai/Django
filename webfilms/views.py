@@ -6,5 +6,6 @@ from .models import Film
 
 def all_films(request):
     #return HttpResponse('first test')
-    all_films = Film.objects.all()
-    return render(request, 'films.html', {'films': all_films}) #templates
+    all_films = Film.objects.all()  #ORM
+    count = len(all_films)
+    return render(request, 'films.html', {'films': all_films, 'count': count}) #request, templates, arguments

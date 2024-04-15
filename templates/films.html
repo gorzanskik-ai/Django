@@ -1,14 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'new.css' %}">
 </head>
 <body>
-    <h2>My films</h2>
-    {% for film in films %}
-        <p>{{film.title}}</p>
-    {% endfor %}
+    {% if count == None %}
+        <h2>Lack of films</h2>
+    {% else %}
+        <h2>Quantity of films: {{count}}</h2>
+    
+        {% for film in films %}
+            <p>{{film.title}}</p>
+        {% endfor %}
+    {% endif %}    
+
+    
 </body>
 </html>

@@ -8,7 +8,7 @@ class Film(models.Model):
     description = models.TextField(default='')
     premiere = models.DateField(null=True, blank=True)
     imdb_rating = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
-    poster = models.ImageField(upload_to='posters', null=True, blank=True)
+    poster = models.ImageField(upload_to='posters', null=True, blank=True)  #upload_to -> miejsce zapisu 
 
     def __str__(self):
         return self.title + ' (' + str(self.year) + ')'
